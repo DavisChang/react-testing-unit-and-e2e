@@ -10,10 +10,15 @@ function Counter() {
   const subtractToCounter = () => {
     setCounterValue(counterValue - inputValue)
   }
+
   return (
     <div>
       <h2 data-testid="header">My counter</h2>
-      <h3 data-testid="counter">{counterValue}</h3>
+      <h3
+        data-testid="counter"
+        className={`${counterValue >= 100 ? "green" : ""}${counterValue <= -100 ? "red" : ""}`}
+      >{counterValue}
+      </h3>
       <button
         data-testid="subtract-btn"
         onClick={subtractToCounter}
