@@ -27,14 +27,14 @@ test("input contains inital value of 1", () => {
 
 test("add button renders with +", () => {
   const { getByTestId } = render(<Counter />)
-  const addBtn = getByTestId("addBtn")
+  const addBtn = getByTestId("add-btn")
 
   expect(addBtn.textContent).toBe("+")
 })
 
 test("subtract button renders with -", () => {
   const { getByTestId } = render(<Counter />)
-  const subtractBtn = getByTestId("subtract")
+  const subtractBtn = getByTestId("subtract-btn")
 
   expect(subtractBtn.textContent).toBe("-")
 })
