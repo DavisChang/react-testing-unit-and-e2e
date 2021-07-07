@@ -24,7 +24,7 @@ function Counter() {
         value={inputValue}
         type="number"
         onChange={(e) => {
-          setInputValue(e.target.value)
+          setInputValue(parseInt(e.target.value))
         }}
       />
       <button
