@@ -1,0 +1,6 @@
+{
+  "baseUrl": "http://mystaging.com/",
+  "experimentalStudio": true,
+  "video": false,
+  "env": {}
+}
