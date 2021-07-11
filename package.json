@@ -15,11 +15,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
     "dev:start": "react-scripts -r @cypress/instrument-cra start",
     "test:e2e:open": "cypress open",
     "test:e2e:staging": "cypress run --config-file ./cypress.staging.json",
-    "test:e2e:report": "./node_modules/.bin/nyc report --reporter text",
+    "test:e2e:report": "npx nyc report --reporter=text",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,6 +39,26 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "testMatch": [
+      "!<rootDir>/cypress/**",
+      "**/__tests__/**/*.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/**",
+      "!<rootDir>/cypress/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": ["text"]
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.9",
